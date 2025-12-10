@@ -13,6 +13,25 @@ C2PM v1 is a structural prototype:
 • no compression or hashing yet
 
 ─────────────────────────────────
+HOW TO BUILD AND USE
+─────────────────────────────────
+1. Requirements
+GCC or Clang
+stb_image.h and stb_image_write.h (included in the repo)
+
+2. Compile the Encoder
+gcc encoder.c -o c2pm_encode -lm
+
+3. Compile the Decoder
+gcc decoder.c -o c2pm_decode -lm
+
+4. Encode an Image (PNG → C2PM)
+./c2pm_encode input.png output.c2pm
+
+5. Decode an Image (C2PM → PNG)
+./c2pm_decode output.c2pm restored.png
+
+─────────────────────────────────
 POTENTIAL USE CASES
 ─────────────────────────────────
 
@@ -53,3 +72,8 @@ v5 — C2PM viewer + color masking tools
 C2PM is open-source under the MIT License and intended for research, experimentation, and educational use.
 
 Created by: Yukesh J
+─────────────────────────────────
+CREDITS
+─────────────────────────────────
+This project uses the stb_image and stb_image_write libraries by Sean Barrett (nothings.org),
+released into the public domain and MIT-licensed.
